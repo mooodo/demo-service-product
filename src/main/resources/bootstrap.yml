@@ -1,0 +1,49 @@
+spring:
+  application:
+    name: service-product
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  profiles:
+      active: dev
+  cloud:
+    config:
+      failFast: true
+      discovery:
+        enabled: true
+        serviceId: service-config
+
+# change those config in prod ?
+eureka:
+  instance:
+    #lease-expiration-duration-in-seconds: 30
+    #lease-renewal-interval-in-seconds: 10
+feign:
+  hystrix:
+    enabled: true
+---
+spring:
+  profiles: dev
+server:
+  port: 9003   
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9001/eureka/
+---
+spring:
+  profiles: docker
+
+server:
+  port: ${SERVICE_PORT:9003}
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: ${REGISTRY_URL}
+
+
