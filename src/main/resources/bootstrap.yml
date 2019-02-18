@@ -7,6 +7,13 @@ spring:
       suffix: .jsp
   profiles:
       active: dev
+  cloud:
+    config:
+      uri: ${GIT_URL:http://localhost:9000/}
+      failFast: false
+      # discovery:
+      #   enabled: true
+      #   serviceId: service-config
 
 # change those config in prod ?
 eureka:
@@ -31,12 +38,6 @@ eureka:
 ---
 spring:
   profiles: docker
-  cloud:
-    config:
-      failFast: true
-      discovery:
-        enabled: true
-        serviceId: service-config
 
 server:
   port: ${SERVICE_PORT:9003}
