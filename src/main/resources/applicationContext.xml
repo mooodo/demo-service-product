@@ -8,10 +8,10 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd"
 	>
 	<description>The application context for query</description>
-	<bean id="productQuery" class="com.demo.product.query.bus.ProductQueryServiceImpl">
+	<bean id="productQry" class="com.demo.product.query.bus.ProductQueryServiceImpl">
 		<property name="queryDao" ref="productQueryDao"></property>
 	</bean>
-	<bean id="productService" class="com.demo.product.service.impl.ProductServiceImpl">
+	<bean id="product" class="com.demo.product.service.impl.ProductServiceImpl">
 		<property name="dao" ref="productDao"></property>
 	</bean>
 </beans>

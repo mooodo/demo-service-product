@@ -5,11 +5,10 @@ package com.demo.product;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
@@ -22,8 +21,9 @@ import org.springframework.context.annotation.ImportResource;
 @EnableFeignClients
 @EnableHystrix
 @Configuration
+@ComponentScan(basePackages="com.demo")
 @ImportResource(locations={"classpath:applicationContext.xml"})
-public class ProductApplication extends SpringBootServletInitializer {
+public class ProductApplication {
 
 	/**
 	 * @param args
@@ -31,11 +31,4 @@ public class ProductApplication extends SpringBootServletInitializer {
 	public static void main(String[] args) {
 		SpringApplication.run(ProductApplication.class, args);
 	}
-
-	@Override
-	protected SpringApplicationBuilder configure(
-			SpringApplicationBuilder builder) {
-		return builder.sources(ProductApplication.class);
-	}
-
 }

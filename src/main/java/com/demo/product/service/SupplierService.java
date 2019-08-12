@@ -3,7 +3,7 @@
  */
 package com.demo.product.service;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +23,6 @@ public interface SupplierService {
 	 * @param id
 	 * @return the supplier
 	 */
-	@GetMapping("supplier/get/supplierService/loadSupplier")
-	public Supplier loadSupplier(@RequestParam(value="arg0") String id);
+	@GetMapping("get/supplier/loadSupplier")
+	public Supplier loadSupplier(@RequestParam(value="id") String id);
 }
