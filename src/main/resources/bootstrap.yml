@@ -23,11 +23,14 @@ eureka:
 feign:
   hystrix:
     enabled: true
+management:
+  endpoints:
+    web:
+      exposure: 
+        include: 'hystrix.stream'
 ---
 spring:
   profiles: dev
-  sleuth:
-    enabled: false
 server:
   port: 9003   
 
