@@ -23,6 +23,6 @@ public interface SupplierService {
 	 * @param id
 	 * @return the supplier
 	 */
-	@GetMapping("get/supplier/loadSupplier")
+	@GetMapping("orm/supplier/loadSupplier")
 	public Supplier loadSupplier(@RequestParam(value="id") String id);
 }
