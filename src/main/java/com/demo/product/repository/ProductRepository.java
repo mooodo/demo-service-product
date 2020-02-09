@@ -20,15 +20,15 @@ public class ProductRepository extends AbstractRepository<Product> {
 	
 	@Override
 	protected void initialize() {
-		Product nodebook = new Product("P00001","笔记本电脑",4000.00,"台","S0001","电子产品");
+		Product nodebook = new Product("40001","笔记本电脑",4000.00,"台","20001","电子产品");
 		put(nodebook);
-		Product printer = new Product("P00002","打印机",2600.00,"台","S0001","电子产品");
+		Product printer = new Product("40002","打印机",2600.00,"台","20001","电子产品");
 		put(printer);
-		Product node = new Product("P00003","记事本",2.00,"本","S0002","办公用品");
+		Product node = new Product("40003","记事本",2.00,"本","20002","办公用品");
 		put(node);
-		Product computor = new Product("P00004","计算器",26.00,"个","S0002","办公用品");
+		Product computor = new Product("40004","计算器",26.00,"个","20002","办公用品");
 		put(computor);
-		Product pencil = new Product("P00005","签字笔",50.00,"盒","S0002","办公用品");
+		Product pencil = new Product("40005","签字笔",50.00,"盒","20002","办公用品");
 		put(pencil);
 	}
 	@Override

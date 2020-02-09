@@ -1,0 +1,40 @@
+kind: Deployment
+apiVersion: extensions/v1beta1
+metadata:
+  labels:
+    app: demo-service-product
+  name: demo-service-product 
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-service-product
+  template:
+    metadata:
+      name: demo-service-product
+      labels:
+        app: demo-service-product
+    spec:
+      containers:
+      - name: demo-service-product
+        image: 192.168.0.209:5000/demo-service-product
+        imagePullPolicy: Always
+        env:
+          - name: REGISTRY_URL
+            value: "http://192.168.0.209:31001/eureka"
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    app: demo-service-product
+  name: demo-service-product
+  namespace: default
+spec:
+  ports:
+  - port: 9003 
+    targetPort: 9003
+  selector:
+    app: demo-service-product
