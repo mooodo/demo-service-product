@@ -18,11 +18,11 @@ spec:
     spec:
       containers:
       - name: demo-service-product
-        image: 192.168.0.209:5000/demo-service-product
+        image: 172.31.87.111:5000/demo-service-product
         imagePullPolicy: Always
         env:
-          - name: REGISTRY_URL
-            value: "http://192.168.0.209:31001/eureka"
+          - name: GIT_URL
+            value: "http://172.31.87.111:31000"
 
 ---
 kind: Service
