@@ -3,6 +3,7 @@
  */
 package com.demo.product.query.bus;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class ProductQueryServiceImpl extends QueryServiceImpl {
 	protected ResultSet afterQuery(Map<String, Object> params,
 			ResultSet resultSet) {
 		@SuppressWarnings("unchecked")
-		List<Product> list = (List<Product>)resultSet.getData();
+		Collection<Product> list = (Collection<Product>)resultSet.getData();
 		for(Product product : list) {
 			String supplierId = product.getSupplierId();
 			Supplier supplier = supplierService.loadSupplier(supplierId);
