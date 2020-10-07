@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objs>
+  <product id="40001" name="笔记本电脑" price="4000" unit="台" supplierId="20001" classify="电子产品"/>
+  <product id="40002" name="打印机" price="2600" unit="台" supplierId="20001" classify="电子产品"/>
+  <product id="40003" name="记事本" price="2" unit="本" supplierId="20002" classify="办公用品"/>
+  <product id="40004" name="笔记本电脑" price="26" unit="个" supplierId="20002" classify="办公用品"/>
+  <product id="40005" name="笔记本电脑" price="50" unit="盒" supplierId="20002" classify="办公用品"/>
+</objs>

@@ -11,7 +11,4 @@
 	<bean id="productQry" class="com.demo.product.query.bus.ProductQueryServiceImpl">
 		<property name="queryDao" ref="productQueryDao"></property>
 	</bean>
-	<bean id="product" class="com.demo.product.service.impl.ProductServiceImpl">
-		<property name="dao" ref="productDao"></property>
-	</bean>
 </beans>

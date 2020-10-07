@@ -3,11 +3,14 @@
  */
 package com.demo.product.entity;
 
+import com.demo.support.entity.Entity;
+
 /**
  * 
  * @author fangang
  */
-public class Product {
+public class Product extends Entity<String> {
+	private static final long serialVersionUID = 3646179784768501382L;
 	private String id;
 	private String name;
 	private double price;

@@ -3,7 +3,7 @@
  */
 package com.demo.product.dao;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.demo.product.entity.Product;
 
@@ -20,7 +20,7 @@ public interface ProductDao {
 	/**
 	 * @param listOfProducts
 	 */
-	public void save(List<Product> listOfProducts);
+	public void save(Collection<Product> listOfProducts);
 	/**
 	 * @param id
 	 */
@@ -33,5 +33,5 @@ public interface ProductDao {
 	/**
 	 * @return list all of the products.
 	 */
-	public List<Product> listOfProducts();
+	public Collection<Product> listOfProducts();
 }

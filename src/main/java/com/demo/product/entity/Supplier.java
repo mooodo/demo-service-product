@@ -3,11 +3,13 @@
  */
 package com.demo.product.entity;
 
+import com.demo.support.entity.Entity;
+
 /**
- * 
  * @author fangang
  */
-public class Supplier {
+public class Supplier extends Entity<String> {
+	private static final long serialVersionUID = 6701114321174621284L;
 	private String id;
 	private String name;
 	

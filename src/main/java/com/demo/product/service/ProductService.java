@@ -3,7 +3,7 @@
  */
 package com.demo.product.service;
 
-import java.util.List;
+import java.util.Collection;
 
 import com.demo.product.entity.Product;
 
@@ -16,15 +16,21 @@ public interface ProductService {
 	 * save a product.
 	 * @param product
 	 */
-	public void saveProduct(Product product);
+	public void save(Product product);
 	/**
 	 * save a list of products.
 	 * @param listOfProducts
 	 */
-	public void saveProductList(List<Product> listOfProducts);
+	public void saveAll(Collection<Product> listOfProducts);
 	/**
 	 * delete a product by id.
 	 * @param id
 	 */
-	public void deleteProduct(String id);
+	public void delete(String id);
+	
+	/**
+	 * @param id
+	 * @return the product with its id.
+	 */
+	public Product get(String id);
 }

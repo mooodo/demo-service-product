@@ -51,4 +51,3 @@ eureka:
   client:
     service-url:
       defaultZone: ${REGISTRY_URL}
-      
