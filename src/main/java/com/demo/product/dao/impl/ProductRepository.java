@@ -1,5 +1,5 @@
-/* 
- * Created by 2018年9月10日
+/*
+ * Created by 2021-01-04 09:06:36 
  */
 package com.demo.product.dao.impl;
 
@@ -9,37 +9,41 @@ import org.springframework.stereotype.Repository;
 
 import com.demo.product.dao.ProductDao;
 import com.demo.product.entity.Product;
+import com.demo.support.dao.BasicRepository;
 
 /**
- * The implement of the product dao.
  * @author fangang
  */
-@Repository()
-public class ProductDaoImpl implements ProductDao {
-	private ProductFactory factory = ProductFactory.newInstance();
-	
+@Repository
+public class ProductRepository extends BasicRepository<Product> implements ProductDao {
+	public ProductRepository() {
+		setClazz(Product.class);
+		initFactory("product.xml");
+	}
+
 	@Override
 	public void save(Product product) {
-		factory.save(product);
+		super.save(product);
 	}
 
 	@Override
 	public void save(Collection<Product> listOfProducts) {
-		for(Product product : listOfProducts) factory.save(product);
+		for(Product product : listOfProducts) save(product);
 	}
 
 	@Override
 	public void deleteProduct(String id) {
-		factory.delete(id);
+		super.delete(id);
 	}
 
 	@Override
 	public Product getProduct(String id) {
-		return factory.get(id);
+		return super.get(id);
 	}
 
 	@Override
 	public Collection<Product> listOfProducts() {
-		return factory.list();
+		return super.list();
 	}
+
 }
