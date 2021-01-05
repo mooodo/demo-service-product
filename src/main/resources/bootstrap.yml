@@ -6,7 +6,10 @@ spring:
       prefix: /
       suffix: .jsp
   profiles:
-      active: dev
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
   cloud:
     config:
       uri: ${GIT_URL:http://localhost:9000/}
