@@ -15,7 +15,7 @@ import com.demo.support.dao.BasicRepository;
  * @author fangang
  */
 @Repository
-public class ProductRepository extends BasicRepository<Product> implements ProductDao {
+public class ProductRepository extends BasicRepository<Product, String> implements ProductDao {
 	public ProductRepository() {
 		setClazz(Product.class);
 		initFactory("product.xml");
